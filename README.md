@@ -7,7 +7,7 @@ https://marketplace.atlassian.com/plugins/proficient.developer.plugins.jira.powe
 Flexible and powerful function to use Regex expressions for search in issue fields.
 Can be used with 2 or 3 arguments.
 
-### powerIssue examples
+### examples
 Simple usage - find any issue with word "amber" in the beginning of the Summary:
 > issue in powerIssue("summary", "(amber).*")
 
@@ -24,18 +24,18 @@ Any issue where assignee name contains "John" (case insensitive):
 > powerComponent([JQL subquery, optional], "regex expression")
 Can be used with 1 or 2 arguments.
 
-### powerComponent examples
+### examples
 Any not resolved issue where component contains words "mobile" or "dev" in any part of component name (case sensitive):
 > component in powerComponent("resolution=EMPTY", ".*(mobile|dev).*")
 
 ## powerAttachment
 > powerAttachment([JQL subquery, optional], regex expression)
 
-### powerAttachment examples
+### examples
 > issue in powerAttachment(".*(?=android).*(?=pdf).*")
 
 ## powerProject
 > powerProject(regex expression)
 
-### powerProject examples
+### examples
 > project in powerProject(".*(Customer).*")
