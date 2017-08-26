@@ -20,7 +20,7 @@ The following tables lists several regular expressions and describes which patte
 
 Detailed guide: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
 
-#### text fields
+#### [text fields]
 | Field | JQL | Notes |
 | ------------- | ------------- | ------------- |
 | summary | issue in powerIssue("summary", ".*") | |
@@ -33,7 +33,7 @@ Real-life examples:
 | Simple usage - find any issue with word "amber" in the beginning of the Summary field | issue in powerIssue("summary", "(amber).*") |  |
 | Any issue from POWERJQL project, where summary or description contains "text1" or "text2" (case insensitive) | issue in powerIssue("project=POWERJQL", "summary, description", "(?i).&ast;(text1 &#124; text2).&ast;") |  |
 
-#### user fields
+#### [user fields]
 | Field | JQL | Notes |
 | ------------- | ------------- | ------------- |
 | assignee | issue in powerIssue("assignee", "Jackson") | |
@@ -46,7 +46,7 @@ Real-life examples:
 | ------------- | ------------- | ------------- |
 | Any issue where assignee name contains "Michael" (case insensitive) | issue in powerIssue("assignee", "(?i).&ast;(Michael).&ast;") |  |
 
-#### date fields
+#### [date fields]
 To search by date field use pattern "yyyy/MM/dd HH:mm".
 
 | Field | JQL | Notes |
@@ -56,11 +56,11 @@ To search by date field use pattern "yyyy/MM/dd HH:mm".
 | due, duedate | issue in powerIssue("due", "2017/08/26.*") | |
 | resolutiondate | issue in powerIssue("resolutiondate", "2017/08.*") | |
 
-#### fixVersion,affectedVersion fields 
+#### [fixVersion,affectedVersion fields]
 
-#### components field 
+#### [components field] 
 
-#### watchers field 
+#### [watchers field] 
 
 ## powerComponent
 > powerComponent([JQL subquery, optional], "regex expression")
