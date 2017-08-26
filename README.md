@@ -17,21 +17,33 @@ The following tables lists several regular expressions and describes which patte
 | this is text  | Matches exactly "this is text"  |
 | this\s+is\s+text | Matches the word "this" followed by one or more whitespace characters followed by the word "is" followed by one or more whitespace characters followed by the word "text". |
 | ^\d+(\.\d+)? | ^ defines that the patter must start at beginning of a new line. \d+ matches one or several digits. The ? makes the statement in brackets optional. \. matches ".", parentheses are used for grouping. Matches for example "5", "1.5" and "2.21". |
+
 Detailed guide: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
 
 #### examples
+##### text fields
+| Field | JQL | Notes |
+| ------------- | ------------- | ------------- |
+| summary | issue in powerIssue("summary", ".*") | |
+| description | issue in powerIssue("description", ".*") | |
+
+Real-life examples:
 | Task | JQL | Notes |
 | ------------- | ------------- | ------------- |
-| Simple usage - find any issue with word "amber" in the beginning of the Summary | issue in powerIssue("summary", "(amber).*") | |
+| Simple usage - find any issue with word "amber" in the beginning of the Summary field | issue in powerIssue("summary", "(amber).*") | |
+| Any issue from POWERJQL project, where summary or description contains "text1" or "text2" (case insensitive) | issue in powerIssue("project=POWERJQL", "summary, description", "(?i).*(text1|text2).*") | |
 
+##### user fields (like assignee, reporter)
+| Field | JQL | Notes |
+| ------------- | ------------- | ------------- |
+| assignee | issue in powerIssue("assignee", "Jackson") | |
+| reporter | issue in powerIssue("reporter", "Lucas") | |
+| creator | issue in powerIssue("creator", "Liam") | |
 
-Any issue from POWERJQL project, where summary or description contains "text1" or "text2" (case insensitive):
-> issue in powerIssue("project=POWERJQL", "summary, description", "(?i).*(text1|text2).*")
-
-
-Any issue where assignee name contains "John" (case insensitive):
-> issue in powerIssue("assignee", "(?i).*(John).*")
-
+Real-life examples:
+| Task | JQL | Notes |
+| ------------- | ------------- | ------------- |
+| Any issue where assignee name contains "Michael" (case insensitive) | issue in powerIssue("assignee", "(?i).*(Michael).*") | |
 
 ## powerComponent
 > powerComponent([JQL subquery, optional], "regex expression")
