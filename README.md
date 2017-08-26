@@ -31,7 +31,7 @@ Real-life examples:
 | Task | JQL | Notes |
 | ------------- | ------------- | ------------- |
 | Simple usage - find any issue with word "amber" in the beginning of the Summary field | issue in powerIssue("summary", "(amber).*") |  |
-| Any issue from POWERJQL project, where summary or description contains "text1" or "text2" (case insensitive) | issue in powerIssue("project=POWERJQL", "summary, description", "(?i).*(text1 &#124; text2).*") |  |
+| Any issue from POWERJQL project, where summary or description contains "text1" or "text2" (case insensitive) | issue in powerIssue("project=POWERJQL", "summary, description", "(?i).&ast;(text1 &#124; text2).&ast;") |  |
 
 #### user fields
 | Field | JQL | Notes |
@@ -44,7 +44,7 @@ Real-life examples:
 
 | Task | JQL | Notes |
 | ------------- | ------------- | ------------- |
-| Any issue where assignee name contains "Michael" (case insensitive) | issue in powerIssue("assignee", "(?i).*(Michael).*") |  |
+| Any issue where assignee name contains "Michael" (case insensitive) | issue in powerIssue("assignee", "(?i).&ast;(Michael).&ast;") |  |
 
 #### date fields
 To search by date field use pattern "yyyy/MM/dd HH:mm".
@@ -67,13 +67,13 @@ Can be used with 1 or 2 arguments.
 
 #### examples
 Any not resolved issue where component contains words "mobile" or "dev" in any part of component name (case sensitive):
-> component in powerComponent("resolution=EMPTY", ".*(mobile &#124; dev).*")
+> component in powerComponent("resolution=EMPTY", ".&ast;(mobile &#124; dev).&ast;")
 
 ## powerAttachment
 > powerAttachment([JQL subquery, optional], regex expression)
 
 #### examples
-> issue in powerAttachment(".*(?=android).*(?=pdf).*")
+> issue in powerAttachment(".&ast;(?=android).&ast;(?=pdf).&ast;")
 
 ## powerProject
 > powerProject(regex expression)
