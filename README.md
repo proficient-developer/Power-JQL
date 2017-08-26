@@ -18,7 +18,7 @@ The following tables lists several regular expressions and describes which patte
 | this\s+is\s+text | Matches the word "this" followed by one or more whitespace characters followed by the word "is" followed by one or more whitespace characters followed by the word "text". |
 | ^\d+(\.\d+)? | ^ defines that the patter must start at beginning of a new line. \d+ matches one or several digits. The ? makes the statement in brackets optional. \. matches ".", parentheses are used for grouping. Matches for example "5", "1.5" and "2.21". |
 
-Detailed guide: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
+Further Reading: http://www.regular-expressions.info/java.html
 
 #### [text fields]
 | Field | JQL | Notes |
