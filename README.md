@@ -48,6 +48,7 @@ Real-life examples:
 
 #### date fields
 To search by date field use pattern "yyyy/MM/dd HH:mm".
+
 | Field | JQL | Notes |
 | ------------- | ------------- | ------------- |
 | created | issue in powerIssue("created", "2017.*") | |
