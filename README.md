@@ -31,7 +31,7 @@ Real-life examples:
 | Task | JQL | Notes |
 | ------------- | ------------- | ------------- |
 | Simple usage - find any issue with word "amber" in the beginning of the Summary field | issue in powerIssue("summary", "(amber).*") |  |
-| Any issue from POWERJQL project, where summary or description contains "text1" or "text2" (case insensitive) | issue in powerIssue("project=POWERJQL", "summary, description", "(?i).*(text1|text2).*") |  |
+| Any issue from POWERJQL project, where summary or description contains "text1" or "text2" (case insensitive) | issue in powerIssue("project=POWERJQL", "summary, description", "(?i).*(text1 &#124; text2).*") |  |
 
 #### user fields
 | Field | JQL | Notes |
@@ -67,7 +67,7 @@ Can be used with 1 or 2 arguments.
 
 #### examples
 Any not resolved issue where component contains words "mobile" or "dev" in any part of component name (case sensitive):
-> component in powerComponent("resolution=EMPTY", ".*(mobile|dev).*")
+> component in powerComponent("resolution=EMPTY", ".*(mobile &#124; dev).*")
 
 ## powerAttachment
 > powerAttachment([JQL subquery, optional], regex expression)
