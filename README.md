@@ -56,7 +56,12 @@ To search by date field use pattern "yyyy/MM/dd HH:mm".
 | due, duedate | issue in powerIssue("due", "2017/08/26.*") | |
 | resolutiondate | issue in powerIssue("resolutiondate", "2017/08.*") | |
 
-#### [fixVersion,affectedVersion fields]
+#### [fixVersion, affectedVersion fields]
+| Field | JQL | Notes |
+| ------------- | ------------- | ------------- |
+| fixVersion | issue in powerIssue("fixVersion", ".*(8\\.5.).*") | to find all tickets with fix versions like 8.5.1, 8.5.2, 8.5.1.1 etc. |
+| affectedVersion | issue in powerIssue("affectedVersion", ".*(1\\.0.).*") | to find all tickets with affected versions like 8.5.1, 8.5.2, 8.5.1.1 etc. |
+
 
 #### [components field] 
 
