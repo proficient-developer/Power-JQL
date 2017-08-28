@@ -60,8 +60,7 @@ To search by date field use pattern "yyyy/MM/dd HH:mm".
 | Field | JQL | Notes |
 | ------------- | ------------- | ------------- |
 | fixVersion | issue in powerIssue("fixVersion", ".*(8\\.5.).*") | to find all tickets with fix versions like 8.5.1, 8.5.2, 8.5.1.1 etc. |
-| affectedVersion | issue in powerIssue("affectedVersion", ".*(1\\.0.).*") | to find all tickets with affected versions like 8.5.1, 8.5.2, 8.5.1.1 etc. |
-
+| affectedVersion | issue in powerIssue("affectedVersion", ".*(1\\.0.).*") | to find all tickets with affected versions like 1.0.1, 1.0.2, 1.0.1.1 etc. |
 
 #### [components field] 
 
